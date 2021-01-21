@@ -4,4 +4,4 @@
 
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
 
-![eslint-test](https://github.com/DolArt/frontend-project-lvl1/workflows/github-actions/badge.svg)
+![testing by eslint](https://github.com/DolArt/frontend-project-lvl1/workflows/testing%20by%20eslint/badge.svg)
