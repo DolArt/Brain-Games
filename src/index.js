@@ -8,22 +8,35 @@ export default (gameType) => {
     .question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
 
-  let gameResult = '';
-
   if (gameType === 'even') {
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
-    gameResult = getGameEvenResult();
   }
 
   if (gameType === 'calc') {
     console.log('What is the result of the expression?');
-    gameResult = getGameCalcResult();
   }
 
-  if (gameResult === 'defeat') {
-    console.log(`Let's try again, ${userName}!`);
+  for (let i = 0; i < 3; i += 1) {
+    let [correctAnswer, userAnswer] = ['', ''];
 
-    return;
+    if (gameType === 'even') {
+      correctAnswer = getGameEvenResult();
+    }
+
+    if (gameType === 'calc') {
+      correctAnswer = getGameCalcResult();
+    }
+
+    userAnswer = readlineSync.question('Your answer: ');
+
+    if (userAnswer === correctAnswer) {
+      console.log('Correct!');
+    } else {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
+      console.log(`Let's try again, ${userName}!`);
+
+      return;
+    }
   }
 
   console.log(`Congratulations, ${userName}!`);
