@@ -6,4 +6,8 @@
 
 ## Installing package and playing the "brain-even" game:
 
+<<<<<<< HEAD
 [![asciicast](https://asciinema.org/a/hgKFqSpZ8h2cwuhDwXgC7yzZ2.svg)](https://asciinema.org/a/hgKFqSpZ8h2cwuhDwXgC7yzZ2)
+=======
+![testing by eslint](https://github.com/DolArt/frontend-project-lvl1/workflows/testing%20by%20eslint/badge.svg)
+>>>>>>> 2f2c81477fca63c61473fa000dc5a6de9548fff9
