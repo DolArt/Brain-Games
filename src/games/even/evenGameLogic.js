@@ -1,9 +1,10 @@
 import readlineSync from 'readline-sync';
-import isEven from './is-even.js';
+import isEven from './isNumberEven.js';
+import getRandomIntNum from '../../getRandomIntNum.js';
 
 export default () => {
   for (let i = 0; i < 3; i += 1) {
-    const randomNum = Math.round(Math.random() * 125);
+    const randomNum = getRandomIntNum(1, 100);
     const correctAnswer = isEven(randomNum);
 
     console.log(`Question: ${randomNum}`);
