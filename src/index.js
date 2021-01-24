@@ -1,8 +1,9 @@
 import readlineSync from 'readline-sync';
-import getGameEvenResult from './games/even/evenGameLogic.js';
+import isNumberEven from './games/even/evenGameLogic.js';
 import getGameCalcResult from './games/calc/calcGameLogic.js';
 import getGameGCDResult from './games/gcd/gcdGameLogic.js';
 import getProgressionGameResult from './games/progression/progressionGameLogic.js';
+import isNumberPrime from './games/prime/primeGameLogic.js';
 
 export default (gameType) => {
   console.log('Welcome to the Brain Games!');
@@ -26,11 +27,15 @@ export default (gameType) => {
     console.log('What number is missing in the progression?');
   }
 
+  if (gameType === 'prime') {
+    console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+  }
+
   for (let i = 0; i < 3; i += 1) {
     let [correctAnswer, userAnswer] = ['', ''];
 
     if (gameType === 'even') {
-      correctAnswer = getGameEvenResult();
+      correctAnswer = isNumberEven();
     }
 
     if (gameType === 'calc') {
@@ -43,6 +48,10 @@ export default (gameType) => {
 
     if (gameType === 'progression') {
       correctAnswer = getProgressionGameResult();
+    }
+
+    if (gameType === 'prime') {
+      correctAnswer = isNumberPrime();
     }
 
     userAnswer = readlineSync.question('Your answer: ');
