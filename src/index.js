@@ -2,6 +2,7 @@ import readlineSync from 'readline-sync';
 import getGameEvenResult from './games/even/evenGameLogic.js';
 import getGameCalcResult from './games/calc/calcGameLogic.js';
 import getGameGCDResult from './games/gcd/gcdGameLogic.js';
+import getProgressionGameResult from './games/progression/progressionGameLogic.js';
 
 export default (gameType) => {
   console.log('Welcome to the Brain Games!');
@@ -21,6 +22,10 @@ export default (gameType) => {
     console.log('Find the greatest common divisor of given numbers.');
   }
 
+  if (gameType === 'progression') {
+    console.log('What number is missing in the progression?');
+  }
+
   for (let i = 0; i < 3; i += 1) {
     let [correctAnswer, userAnswer] = ['', ''];
 
@@ -34,6 +39,10 @@ export default (gameType) => {
 
     if (gameType === 'gcd') {
       correctAnswer = getGameGCDResult();
+    }
+
+    if (gameType === 'progression') {
+      correctAnswer = getProgressionGameResult();
     }
 
     userAnswer = readlineSync.question('Your answer: ');
