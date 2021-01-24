@@ -15,3 +15,7 @@
 ## "brain-gcd" (find greatest common divisor) game demo:
 
 [![asciicast](https://asciinema.org/a/t0fiuoqnDmXmZEE0p3WGE6gaR.svg)](https://asciinema.org/a/t0fiuoqnDmXmZEE0p3WGE6gaR?cols=90&rows=20)
+
+## "brain-progression" game demo:
+
+[![asciicast](https://asciinema.org/a/2bbwtKiWItmafghY8KkIXF5Np.svg)](https://asciinema.org/a/2bbwtKiWItmafghY8KkIXF5Np)
