@@ -6,5 +6,8 @@
 
 ## Installing package and playing the "brain-even" game:
 
-[![asciicast](https://asciinema.org/a/hgKFqSpZ8h2cwuhDwXgC7yzZ2.svg)](https://asciinema.org/a/hgKFqSpZ8h2cwuhDwXgC7yzZ2)
+[![asciicast](https://asciinema.org/a/hgKFqSpZ8h2cwuhDwXgC7yzZ2.svg)](https://asciinema.org/a/hgKFqSpZ8h2cwuhDwXgC7yzZ2?cols=90&rows=20)
 
+## "brain-calc" game demo:
+
+[![asciicast](https://asciinema.org/a/hgKFqSpZ8h2cwuhDwXgC7yzZ2.svg)](https://asciinema.org/a/hgKFqSpZ8h2cwuhDwXgC7yzZ2?cols=90&rows=20)
