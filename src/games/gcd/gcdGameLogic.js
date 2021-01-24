@@ -1,4 +1,5 @@
 import getRandomIntNum from '../../getRandomIntNum.js';
+import getSortedPair from './getSortedPair.js';
 
 export default () => {
   const firstNumber = getRandomIntNum(1, 100);
@@ -6,26 +7,14 @@ export default () => {
 
   console.log(`Question: ${firstNumber} ${secondNumber}`);
 
-  let numbers = [];
-  if (firstNumber < secondNumber) {
-    numbers = [firstNumber, secondNumber];
-  } else {
-    numbers = [secondNumber, firstNumber];
+  const numbers = getSortedPair(firstNumber, secondNumber);
+  let gcd = 1;
+
+  for (let i = 1; i <= numbers[0]; i += 1) {
+    if (numbers[0] % i === 0 && numbers[1] % i === 0) {
+      gcd = i;
+    }
   }
 
-  const getGCD = (numbers, gcd, index) => {
-    if (index === numbers[0] + 1) {
-      return gcd.toString();
-    }
-
-    if (numbers[0] % index === 0 && numbers[1] % index === 0) {
-      gcd = index;
-    }
-
-    index += 1;
-
-    return getGCD(numbers, gcd, index);
-  };
-
-  return getGCD(numbers, 1, 1).toString();
+  return gcd.toString();
 };
