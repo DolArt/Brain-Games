@@ -11,3 +11,7 @@
 ## "brain-calc" game demo:
 
 [![asciicast](https://asciinema.org/a/hgKFqSpZ8h2cwuhDwXgC7yzZ2.svg)](https://asciinema.org/a/hgKFqSpZ8h2cwuhDwXgC7yzZ2?cols=90&rows=20)
+
+## "brain-gcd" (find greatest common divisor) game demo:
+
+[![asciicast](https://asciinema.org/a/t0fiuoqnDmXmZEE0p3WGE6gaR.svg)](https://asciinema.org/a/t0fiuoqnDmXmZEE0p3WGE6gaR?cols=90&rows=20)

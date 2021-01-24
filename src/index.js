@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
 import getGameEvenResult from './games/even/evenGameLogic.js';
 import getGameCalcResult from './games/calc/calcGameLogic.js';
+import getGameGCDResult from './games/gcd/gcdGameLogic.js';
 
 export default (gameType) => {
   console.log('Welcome to the Brain Games!');
@@ -16,6 +17,10 @@ export default (gameType) => {
     console.log('What is the result of the expression?');
   }
 
+  if (gameType === 'gcd') {
+    console.log('Find the greatest common divisor of given numbers.');
+  }
+
   for (let i = 0; i < 3; i += 1) {
     let [correctAnswer, userAnswer] = ['', ''];
 
@@ -25,6 +30,10 @@ export default (gameType) => {
 
     if (gameType === 'calc') {
       correctAnswer = getGameCalcResult();
+    }
+
+    if (gameType === 'gcd') {
+      correctAnswer = getGameGCDResult();
     }
 
     userAnswer = readlineSync.question('Your answer: ');
