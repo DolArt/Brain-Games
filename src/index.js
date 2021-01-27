@@ -1,65 +1,29 @@
 import readlineSync from 'readline-sync';
-import isNumberEven from './games/even/evenGameLogic.js';
-import getGameCalcResult from './games/calc/calcGameLogic.js';
-import getGameGCDResult from './games/gcd/gcdGameLogic.js';
-import getProgressionGameResult from './games/progression/progressionGameLogic.js';
-import isNumberPrime from './games/prime/primeGameLogic.js';
 
-export default (gameType) => {
+export default (gameLogic) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync
     .question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
 
-  if (gameType === 'even') {
-    console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  }
+  console.log(gameLogic);
+  const gameRules = gameLogic[0];
 
-  if (gameType === 'calc') {
-    console.log('What is the result of the expression?');
-  }
-
-  if (gameType === 'gcd') {
-    console.log('Find the greatest common divisor of given numbers.');
-  }
-
-  if (gameType === 'progression') {
-    console.log('What number is missing in the progression?');
-  }
-
-  if (gameType === 'prime') {
-    console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  }
+  console.log(gameRules);
 
   for (let i = 0; i < 3; i += 1) {
-    let [correctAnswer, userAnswer] = ['', ''];
+    const runGame = gameLogic[1];
 
-    if (gameType === 'even') {
-      correctAnswer = isNumberEven();
-    }
+    const question = runGame[0];
+    console.log(`Question: ${question}`);
 
-    if (gameType === 'calc') {
-      correctAnswer = getGameCalcResult();
-    }
+    const answer = runGame[1].toString();
+    const userAnswer = readlineSync.question('Your answer: ');
 
-    if (gameType === 'gcd') {
-      correctAnswer = getGameGCDResult();
-    }
-
-    if (gameType === 'progression') {
-      correctAnswer = getProgressionGameResult();
-    }
-
-    if (gameType === 'prime') {
-      correctAnswer = isNumberPrime();
-    }
-
-    userAnswer = readlineSync.question('Your answer: ');
-
-    if (userAnswer === correctAnswer) {
+    if (userAnswer === answer) {
       console.log('Correct!');
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'`);
       console.log(`Let's try again, ${userName}!`);
 
       return;
