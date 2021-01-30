@@ -20,16 +20,18 @@ const getGameData = () => {
   const missingElementIndex = getRandomIntNum(0, progressionLength);
   const answer = progression[missingElementIndex].toString();
 
-  let progressionWithoutOneElement = '';
+  /* let progressionWithoutOneElement = '';
   for (let i = 0; i < progressionLength; i += 1) {
     if (i === missingElementIndex) {
       progressionWithoutOneElement += '.. ';
     } else {
       progressionWithoutOneElement += `${progression[i]} `;
     }
-  }
+  } */
+  progression[missingElementIndex] = '..';
+  const question = progression.join(' ');
 
-  return [progressionWithoutOneElement, answer];
+  return [question, answer];
 };
 
 export default () => runGameEngine('What number is missing in the progression?', getGameData);
