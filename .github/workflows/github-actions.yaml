@@ -9,6 +9,9 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
 
+      - name: "checking node version"
+        run: node -v
+
       - name: "installing npm"
         run: make install
 
