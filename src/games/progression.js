@@ -11,14 +11,14 @@ const getProgression = (firstElement, step, length) => {
   return progression;
 };
 
-const getDataForGame = () => {
+const getGameData = () => {
   const progressionStep = getRandomIntNum(1, 31);
   const progressionFirstElement = getRandomIntNum(1, 71);
   const progressionLength = getRandomIntNum(5, 11);
   const progression = getProgression(progressionFirstElement, progressionStep, progressionLength);
 
   const missingElementIndex = getRandomIntNum(0, progressionLength);
-  const missingElement = progression[missingElementIndex];
+  const answer = progression[missingElementIndex].toString();
 
   let progressionWithoutOneElement = '';
   for (let i = 0; i < progressionLength; i += 1) {
@@ -29,7 +29,7 @@ const getDataForGame = () => {
     }
   }
 
-  return [progressionWithoutOneElement, missingElement.toString()];
+  return [progressionWithoutOneElement, answer];
 };
 
-export default () => runGameEngine('What number is missing in the progression?', getDataForGame);
+export default () => runGameEngine('What number is missing in the progression?', getGameData);
