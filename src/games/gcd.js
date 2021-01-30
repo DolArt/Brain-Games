@@ -1,17 +1,7 @@
 import getRandomIntNum from '../getRandomIntNum.js';
 import runGameEngine from '../index.js';
 
-const getGCD = (num1, num2) => {
-  if (num1 === 0 || num2 === 0) {
-    return num1 + num2;
-  }
-
-  if (num1 > num2) {
-    return getGCD(num1 % num2, num2);
-  }
-
-  return getGCD(num1, num2 % num1);
-};
+const getGCD = (num1, num2) => ((!num2) ? num1 : getGCD(num2, num1 % num2));
 
 const getGameData = () => {
   const firstNumber = getRandomIntNum(1, 100);
