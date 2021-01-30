@@ -1,34 +1,26 @@
 import getRandomIntNum from '../getRandomIntNum.js';
 import runGameEngine from '../index.js';
 
-const getRandomElement = (elements) => {
-  const randomIndex = getRandomIntNum(0, elements.length);
-
-  return elements[randomIndex];
-};
-
 const calculateResult = (operation, num1, num2) => {
-  let result = 0;
-
   switch (operation) {
     case '+':
-      result = num1 + num2;
-      break;
+      return num1 + num2;
     case '-':
-      result = num1 - num2;
-      break;
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
     default:
-      result = num1 * num2;
+      return null;
   }
-
-  return result;
 };
 
-const getDataForGame = () => {
+const getGameData = () => {
   const firstNumber = getRandomIntNum(1, 100);
   const secondNumber = getRandomIntNum(1, 100);
+
   const operations = ['+', '-', '*'];
-  const randomOperation = getRandomElement(operations);
+  const randomIndex = getRandomIntNum(0, operations.length);
+  const randomOperation = operations[randomIndex];
 
   const question = `${firstNumber} ${randomOperation} ${secondNumber}`;
   const answer = calculateResult(randomOperation, firstNumber, secondNumber).toString();
@@ -36,4 +28,6 @@ const getDataForGame = () => {
   return [question, answer];
 };
 
-export default () => runGameEngine('What is the result of the expression?', getDataForGame);
+const description = 'What is the result of the expression?';
+
+export default () => runGameEngine(description, getGameData);
